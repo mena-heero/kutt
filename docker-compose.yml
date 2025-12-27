@@ -3,12 +3,12 @@ services:
     build:
       context: .
     volumes:
-       - db_data_sqlite:/var/lib/kutt
+       - ../kutt.sqlite:/var/lib/kutt/kutt.sqlite
        - custom:/kutt/custom
     environment:
-      DB_FILENAME: "/var/lib/kutt/data.sqlite"
+      DB_FILENAME: "/var/lib/kutt/kutt.sqlite"
+      JWT_SECRET: verylongscared1283971@87213897askdjghaskjd
     ports:
-      - 3000:3000
+      - 3333:3000
 volumes:
-  db_data_sqlite:
   custom:
